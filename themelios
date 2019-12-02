@@ -188,9 +188,7 @@ zpool create -f \
           -R /mnt \
           $zfs_pool_name \
           $zfs_pool_type \
-          ${zfs_pool_disks[@]/%/$zpool_partition} \
-          cache ${zfs_pool_cache_disks[@]} \
-          log ${zfs_pool_log_disks[@]} || die "zpool_create failed"
+          ${zfs_pool_disks[@]/%/$zpool_partition} || die "zpool_create failed"
 EOF
     zpool create -f \
           -o ashift=12 \
@@ -203,9 +201,17 @@ EOF
           -R /mnt \
           $zfs_pool_name \
           $zfs_pool_type \
-          ${zfs_pool_disks[@]/%/$zpool_partition} \
-          cache ${zfs_pool_cache_disks[@]} \
-          log ${zfs_pool_log_disks[@]} || die "zpool_create failed"
+          ${zfs_pool_disks[@]/%/$zpool_partition} || die "zpool_create failed"
+
+
+    if [ ${#zfs_pool_cache_disks[@]} -ne 0 ]
+    then
+	zfs add "$zfs_pool_name" cache ${zfs_pool_cache_disks[@]}
+    fi
+    if [ ${#zfs_pool_cache_disks[@]} -ne 0 ]
+    then
+	zfs add "$zfs_pool_name" log ${zfs_pool_log_disks[@]}
+    fi
 
     # https://github.com/NixOS/nixpkgs/issues/16954
     zfs set acltype=posixacl "$zfs_pool_name"
