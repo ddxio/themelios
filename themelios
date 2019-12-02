@@ -145,25 +145,25 @@ disk_prep() {
     fi
 
     sgdisk_clear() {
-        for disk_id in "${zfs_pool_disks[@]}" "${zfs_pool_cache_disks[@]}" "${zfs_pool_log_disks[@]}"
+        for disk_id in ${zfs_pool_disks[@]} ${zfs_pool_cache_disks[@]} ${zfs_pool_log_disks[@]};
         do
-            echo "clearing disk with sgdisk..."
+            echo "clearing ${disk_id} disk with sgdisk..."
             sgdisk --zap-all "$disk_id" || die "sgdisk_clear failed"
         done
     }
     [[ $use_sgdisk_clear == "true" ]] && sgdisk_clear
 
     wipefs_all() {
-        for disk_id in "${zfs_pool_disks[@]}" "${zfs_pool_cache_disks[@]}" "${zfs_pool_log_disks[@]}"
+        for disk_id in ${zfs_pool_disks[@]} ${zfs_pool_cache_disks[@]} ${zfs_pool_log_disks[@]};
         do
-            echo "wiping disk signatures with wipefs..."
+            echo "wiping disk ${disk_id} signatures with wipefs..."
             wipefs -fa "$disk_id" || die "wipefs_all failed"
         done
     }
     [[ $use_wipefs_all == "true" ]] && wipefs_all
 
     dd_zero() {
-        for disk_id in "${zfs_pool_disks[@]}" "${zfs_pool_cache_disks[@]}" "${zfs_pool_log_disks[@]}"
+        for disk_id in ${zfs_pool_disks[@]} ${zfs_pool_cache_disks[@]} ${zfs_pool_log_disks[@]};
         do
             echo "writing zeros to ${disk_id}..."
             dd if=/dev/zero of="$disk_id" bs=1M oflag=direct status=progress &
