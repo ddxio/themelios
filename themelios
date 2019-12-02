@@ -145,7 +145,7 @@ disk_prep() {
     fi
 
     sgdisk_clear() {
-        for disk_id in "${zfs_pool_disks[@]}"
+        for disk_id in "${zfs_pool_disks[@]} ${zfs_pool_cache_disks[@]} ${zfs_pool_log_disks[@]}"
         do
             echo "clearing disk with sgdisk..."
             sgdisk --zap-all "$disk_id" || die "sgdisk_clear failed"
@@ -154,7 +154,7 @@ disk_prep() {
     [[ $use_sgdisk_clear == "true" ]] && sgdisk_clear
 
     wipefs_all() {
-        for disk_id in "${zfs_pool_disks[@]}"
+        for disk_id in "${zfs_pool_disks[@]} ${zfs_pool_cache_disks[@]} ${zfs_pool_log_disks[@]}"
         do
             echo "wiping disk signatures with wipefs..."
             wipefs -fa "$disk_id" || die "wipefs_all failed"
@@ -163,7 +163,7 @@ disk_prep() {
     [[ $use_wipefs_all == "true" ]] && wipefs_all
 
     dd_zero() {
-        for disk_id in "${zfs_pool_disks[@]}"
+        for disk_id in "${zfs_pool_disks[@]} ${zfs_pool_cache_disks[@]} ${zfs_pool_log_disks[@]}"
         do
             echo "writing zeros to ${disk_id}..."
             dd if=/dev/zero of="$disk_id" bs=1M oflag=direct status=progress &
@@ -188,7 +188,9 @@ zpool create -f \
           -R /mnt \
           $zfs_pool_name \
           $zfs_pool_type \
-          ${zfs_pool_disks[@]/%/$zpool_partition} || die "zpool_create failed"
+          ${zfs_pool_disks[@]/%/$zpool_partition} \
+          cache ${zfs_pool_cache_disks[@]} \
+          log ${zfs_pool_log_disks[@]} || die "zpool_create failed"
 EOF
     zpool create -f \
           -o ashift=12 \
@@ -201,7 +203,9 @@ EOF
           -R /mnt \
           $zfs_pool_name \
           $zfs_pool_type \
-          ${zfs_pool_disks[@]/%/$zpool_partition} || die "zpool_create failed"
+          ${zfs_pool_disks[@]/%/$zpool_partition} \
+          cache ${zfs_pool_cache_disks[@]} \
+          log ${zfs_pool_log_disks[@]} || die "zpool_create failed"
 
     # https://github.com/NixOS/nixpkgs/issues/16954
     zfs set acltype=posixacl "$zfs_pool_name"
