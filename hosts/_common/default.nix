@@ -51,7 +51,6 @@
     export HISTSIZE=300000
     export HISTFILESIZE=200000
     export HISTIGNORE="ls:ll:la:pwd:clear:h:j"
-    export HISTTIMEFORMAT="${FG_BLUE}${FONT_BOLD}%Y/%m/%d %H:%M:%S${FONT_RESET} "
     export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
     # check the window size after each command and, if necessary,
     # update the values of LINES and COLUMNS.
