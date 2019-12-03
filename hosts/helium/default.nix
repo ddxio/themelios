@@ -1,18 +1,8 @@
-{ config, pkgs, ... }:
-# just an example top-level "configuration.nix" file within the themelios scheme
-{
-imports = [];
+{ ... }:
+{ imports = [
+    ../_common/default.nix
+  ];
 
-i18n = {
-consoleFont = "Lat2-Terminus16";
-consoleKeyMap = "us";
-defaultLocale = "en_US.UTF-8";
-};
-
-time.timeZone = "America/New_York";
-
-programs.mtr.enable = true;
-programs.bash.enableCompletion = true;
-
-networking.hostName = "helium";
+  networking.hostName = "helium";
+#  environment.variables.NIXOS_CONFIG = "/nix-config/hosts/hydrogen/default.nix";
 }
