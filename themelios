@@ -206,11 +206,11 @@ EOF
 
     if [ ${#zfs_pool_cache_disks[@]} -ne 0 ]
     then
-	zfs add "$zfs_pool_name" cache ${zfs_pool_cache_disks[@]}
+	zpool add "$zfs_pool_name" cache ${zfs_pool_cache_disks[@]}
     fi
     if [ ${#zfs_pool_cache_disks[@]} -ne 0 ]
     then
-	zfs add "$zfs_pool_name" log ${zfs_pool_log_disks[@]}
+	zpool add "$zfs_pool_name" log ${zfs_pool_log_disks[@]}
     fi
 
     # https://github.com/NixOS/nixpkgs/issues/16954
