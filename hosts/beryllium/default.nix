@@ -3,6 +3,9 @@
 {
 imports = [];
 
+boot.kernelModules = [ "kvm-amd" "kvm-intel" ];
+virtualisation.libvirtd.enable = true;
+
 i18n = {
 consoleFont = "Lat2-Terminus16";
 consoleKeyMap = "us";
@@ -15,4 +18,14 @@ programs.mtr.enable = true;
 programs.bash.enableCompletion = true;
 
 networking.hostName = "beryllium";
+
+environment.systemPackages = with pkgs; [
+  curl git vim
+];
+
+services.openssh = {
+  enable = true;
+  permitRootLogin = "yes";
+};
+
 }
