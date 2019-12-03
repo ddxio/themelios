@@ -328,6 +328,9 @@ EOF
     cat << EOF > /mnt/etc/nixos/zfs-configuration.nix
 { ... }:
 { imports = [];
+boot.kernelModules = [ "kvm-amd" "kvm-intel" ];
+virtualisation.libvirtd.enable = true;
+
 boot.supportedFilesystems = [ "zfs" ];
 boot.loader = {
 
