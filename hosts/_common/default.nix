@@ -8,9 +8,7 @@
     {
 
       # KVM
-      libvirtd = {
-        enabled = true;
-      };
+      libvirtd.enable = true;
 
       # Docker
       docker = {
