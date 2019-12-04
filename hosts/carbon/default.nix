@@ -4,5 +4,11 @@
   ];
 
   networking.hostName = "carbon";
-#  environment.variables.NIXOS_CONFIG = "/nix-config/hosts/hydrogen/default.nix";
+  #  environment.variables.NIXOS_CONFIG = "/nix-config/hosts/hydrogen/default.nix";
+
+  services.kubernetes =
+    {
+      roles = ["master" "node"];
+    };
+
 }
