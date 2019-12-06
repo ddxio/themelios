@@ -100,7 +100,6 @@
       helm
       firecracker
       qemu
-      qemu-utils
       qemu_kvm
       python37Packages.glances
     ];
