@@ -41,10 +41,7 @@
     echo_tmux_title() {
         printf "\033k`whoami`@`pwd`:\033\\"
     }
-    PS1="$PS1\[\e[0;33;49m\]\$(parse_git_branch)\[\e[0;0m\]\$(echo_tmux_title)\n$ "
-    # append history instead of overwrite
     shopt -s histappend
-    # big history, record everything
     export HISTCONTROL=ignorespace:ignoredups:ignoreboth:erasedups
     export HISTSIZE=300000
     export HISTFILESIZE=200000
@@ -96,6 +93,16 @@
       silver-searcher
       tmux
       vim
+      kubecfg
+      kubectl
+      kubectx
+      kubetail
+      helm
+      firecracker
+      qemu
+      qemu-utils
+      qemu_kvm
+      python37Packages.glances
     ];
 
   services.openssh =

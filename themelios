@@ -501,3 +501,8 @@ zpool_create
 mount_create_datasets
 bootstrap_nixcfg
 installation_complete
+
+exit
+
+# NOTES:
+# https://nixos.wiki/wiki/NixOS_on_ZFS
