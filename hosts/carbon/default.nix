@@ -19,13 +19,13 @@
 		    prefixLength = 24;
 	    };
     };
-   */
 
   services.kubernetes =
     {
       roles = ["master" "node"];
     };
 
-#  virtualisation.docker.extraOptions = ''--iptables=false --ip-masq=false -b cbr0'';
+  virtualisation.docker.extraOptions = ''--iptables=false --ip-masq=false -b cbr0'';
+   */
 
 }
