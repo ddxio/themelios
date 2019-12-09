@@ -5,7 +5,7 @@ use_wipefs_all="true"       # use wipefs --all
 use_zero_disks="false"      # use dd if=/dev/zero ...
 install_arguments=""        # any extra arguments to nixos-install, like --no-root-passwd
 zfs_pool_name="tank"
-zfs_pool_disks=("/dev/sda") # Note: using /dev/disk/by-id is also preferable.
+zfs_pool_disks=("/dev/sda" "/dev/sdb") # Note: using /dev/disk/by-id is also preferable.
 zfs_pool_cache_disks=()
 zfs_pool_log_disks=()
 zfs_pool_type=""            # use "" for single, or "mirror", "raidz1", etc.

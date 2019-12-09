@@ -80,6 +80,8 @@
       };
     };
 
+  users.users.<name?>.openssh.authorizedKeys.keys = ["ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDJc2qb1909/uctbx0H2tX8BUOyyXQdxbvsQxDE80PIglc1hqxdf9yUQKCJyywSRyr5TL2KuYJD6UMer58neIlYUhnJ2laPQyb6+kYiQj0/xENpIn6JeLd8yQM48XTyBUW74IwtScPFww80FMSU8tlGcEng7TOdj3O1fLxNPfZZ7yt9+QrRVsmZQ/DxDhMNbnN+fVWV73czQCTzGkbqZ1j4fgE8cLdYgvDEqjgBildK7EsPuLHbSZ/oY0I5xCiiMvRH3tzJ8LMx2maYNXA8HJ9aXORSw3ZcwLgz9YmnRRQYc0ak4b6Uv+Qrw9aZVP7FksuNNdjjG6Moj/nF8fDvzR7vsEIDgj+x09XKYMYquqXbAHMyMrWwvkjUbnL2HwEgbATGkBDrif/7OIoqBzKBCFnI4T7nhDdMbAKmvuU+YUFWbIjYKrMHiGiBoG1LAJ1flN3B0cPefkklse9bp/raUvoftpuZ4EIFxkXnOgNawBh7yNjbMvfLzDxuXrz6lWqFZCnS4IslbL20g6Ur7KjDZcbFC1br7eoUUfBDkVN/oXW+nkWr97nogz1qtqfvyzKt3pNfLd+6TPyU8FLjyVJHzob+aAg0FXmBxQ5kuvAmmmi5gne6p7W+hx69OELLkjJ1Fauqxz1o5I0vxfhqarNrbGoli0OQLclVW9C+2T8kqZfAZQ== gburd@onshape.com" "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEk4qMbKX7KUZx4Yaiw4WCPlHP8nXYSZdynq6HwXeXWX Greg Burd <greg@burd.me> - 2018-11-11"];
+
   # Install some packages
   environment.systemPackages =
     with pkgs;
