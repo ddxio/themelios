@@ -89,23 +89,25 @@
     with pkgs;
     [
       curl
+      dig
+      firecracker
       git
+      gptfdisk
+      helm
       htop
       iotop
-      ncdu
-      nix-review
-      silver-searcher
-      tmux
-      vim
       kubecfg
       kubectl
       kubectx
       kubetail
-      helm
-      firecracker
+      ncdu
+      nix-review
+      python37Packages.glances
       qemu
       qemu_kvm
-      python37Packages.glances
+      silver-searcher
+      tmux
+      vim
     ];
 
   services.openssh =
