@@ -98,8 +98,7 @@
       curl
       file
       firecracker
-      git
-#      gitAndTools.gitFull
+      gitAndTools.gitFull
       gnupg
       gptfdisk
       helm

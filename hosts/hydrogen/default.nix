@@ -3,12 +3,10 @@ let
   kubeMasterIP = "192.168.86.201";
   kubeMasterHostname = "api.kube";
   kubeMasterAPIServerPort = 443;
-in
-{
+in {
   imports = [
     ../_common/default.nix
   ];
-  #  environment.variables.NIXOS_CONFIG = "/nix-config/hosts/hydrogen/default.nix";
 
   networking.hostName = "hydrogen";
   networking.extraHosts = ''
