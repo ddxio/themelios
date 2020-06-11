@@ -20,8 +20,8 @@
 
   i18n =
     {
-      consoleFont = "Lat2-Terminus16";
-      consoleKeyMap = "us";
+      console.font = "Lat2-Terminus16";
+      console.keyMap = "us";
       defaultLocale = "en_US.UTF-8";
     };
 

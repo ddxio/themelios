@@ -4,7 +4,6 @@ let
   domain=".local";
 
 in {
-
   imports = [
     ../_common/default.nix
   ];
@@ -17,7 +16,7 @@ in {
   '';
   #  environment.variables.NIXOS_CONFIG = "/nix-config/hosts/hydrogen/default.nix";
   services.kubernetes = {
-    roles = [ "master" "node" ];
+    roles = [ "master" ];
     masterAddress = "master.${domain}";
     apiserverAddress = "master.${domain}";
     easyCerts = true;
