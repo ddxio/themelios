@@ -1,10 +1,8 @@
 { config, pkgs, ... }:
-
-let
- domain="ddx.io";
-
 {
   imports = [];
+
+  let domain="ddx.io";
 
   boot.kernelModules = [ "kvm-amd" "kvm-intel" ];
 
