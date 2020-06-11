@@ -15,7 +15,7 @@ in {
   '';
   #  environment.variables.NIXOS_CONFIG = "/nix-config/hosts/hydrogen/default.nix";
   services.kubernetes = {
-    roles = [ "master" ];
+    roles = [ "master" "node" ];
     masterAddress = "master.${domain}";
     apiserverAddress = "master.${domain}";
     easyCerts = true;
