@@ -109,6 +109,7 @@
       silver-searcher
       tmux
       vim
+      wget
     ];
 
   services.openssh =

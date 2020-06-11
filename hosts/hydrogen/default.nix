@@ -4,8 +4,16 @@
   ];
 
   networking.hostName = "hydrogen";
-#  environment.variables.NIXOS_CONFIG = "/nix-config/hosts/hydrogen/default.nix";
-   services.kubernetes = {
-    roles = ["master"];
+  networking.extraHosts = ''
+     127.0.0.1 ${domain}
+     127.0.0.1 dashboard.${domain}
+     127.0.0.1 master.${domain}
+  '';
+  #  environment.variables.NIXOS_CONFIG = "/nix-config/hosts/hydrogen/default.nix";
+  services.kubernetes = {
+    roles = [ "master" "node" ];
+    masterAddress = "master.${domain}";
+    apiserverAddress = "master.${domain}";
+    easyCerts = true;
   };
 }
