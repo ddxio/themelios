@@ -10,13 +10,11 @@ in
   ];
   #  environment.variables.NIXOS_CONFIG = "/nix-config/hosts/hydrogen/default.nix";
 
-  networking = {
-    hostName = "hydrogen";
-    extraHosts = ''
-      127.0.0.1 ${hostName}
-       ${kubeMasterIP} ${kubeMasterHostname}
+  networking.hostName = "hydrogen";
+  networking.extraHosts = ''
+    127.0.0.1 ${networking.hostName}
+     ${kubeMasterIP} ${kubeMasterHostname}
     '';
-  };
 
   services.kubernetes = {
     roles = [ "master" ];
