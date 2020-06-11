@@ -1,5 +1,4 @@
 #!/bin/bash
 
-nix-channel --add https://nixos.org/channels/nixos-20.03 nixos
-nixos-rebuild --upgrade boot
+nix-channel --add https://nixos.org/channels/nixos-20.03 nixos && nixos-rebuild --upgrade boot
 
