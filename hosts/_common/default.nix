@@ -2,8 +2,6 @@
 {
   imports = [];
 
-  let domain="ddx.io";
-
   boot.kernelModules = [ "kvm-amd" "kvm-intel" ];
 
   virtualisation =

@@ -1,5 +1,11 @@
 { ... }:
-{ imports = [
+
+let
+  domain="ddx.io";
+
+in {
+
+  imports = [
     ../_common/default.nix
   ];
 
