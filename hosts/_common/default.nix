@@ -18,10 +18,14 @@
 
     };
 
+  console =
+    {
+      font = "Lat2-Terminus16";
+      keyMap = "us";
+    };
+  
   i18n =
     {
-      console.font = "Lat2-Terminus16";
-      console.keyMap = "us";
       defaultLocale = "en_US.UTF-8";
     };
 
