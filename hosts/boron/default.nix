@@ -1,5 +1,9 @@
 { ... }:
-{ imports = [
+let
+  domain=".local";
+
+in {
+  imports = [
     ../_common/default.nix
   ];
 
