@@ -1,4 +1,8 @@
 { config, pkgs, ... }:
+
+let
+ domain="ddx.io";
+
 {
   imports = [];
 
