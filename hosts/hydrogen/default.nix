@@ -10,7 +10,7 @@ in {
 
   networking.hostName = "hydrogen";
   networking.extraHosts = ''
-    127.0.0.1 ${networking.hostName}
+    127.0.0.1 ${hostName}
      ${kubeMasterIP} ${kubeMasterHostname}
     '';
 
