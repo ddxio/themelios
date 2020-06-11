@@ -1,9 +1,5 @@
 { config, pkgs, ... }:
-
-let
-  domain=".local";
-
-in {
+{
   imports = [];
 
   boot.kernelModules = [ "kvm-amd" "kvm-intel" ];
@@ -105,6 +101,7 @@ in {
       helm
       htop
       iotop
+      kompose
       kubecfg
       kubectl
       kubectx
