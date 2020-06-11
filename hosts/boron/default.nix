@@ -1,18 +1,18 @@
 { ... }:
 let
+  hostname = "boron";
   kubeMasterIP = "192.168.86.201";
-  kubeMasterHostname = "api.kube";
+  kubeMasterHostname = hostname;
   kubeMasterAPIServerPort = 443;
 in
 {
   imports = [
     ../_common/default.nix
   ];
-  #  environment.variables.NIXOS_CONFIG = "/nix-config/hosts/hydrogen/default.nix";
 
-  networking.hostName = "boron";
+  networking.hostName = hostname;
   networking.extraHosts = ''
-     127.0.0.1 ${networking.hostName}
+     127.0.0.1 ${hostname}
      ${kubeMasterIP} ${kubeMasterHostname}
   '';
 

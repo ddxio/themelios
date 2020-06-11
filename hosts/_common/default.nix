@@ -4,19 +4,7 @@
 
   boot.kernelModules = [ "kvm-amd" "kvm-intel" ];
 
-  virtualisation =
-    {
-
-      # KVM
-      libvirtd.enable = true;
-
-      # Docker
-      docker = {
-        enable = true;
-        storageDriver = "devicemapper";
-      };
-
-    };
+  swapDevices = [ ];
 
   console =
     {
@@ -35,6 +23,20 @@
 
   environment.variables.EDITOR = pkgs.lib.mkOverride 0 "vim";
   programs.bash.enableCompletion = true;
+
+  virtualisation =
+    {
+
+      # KVM
+      libvirtd.enable = true;
+
+      # Docker
+      docker = {
+        enable = true;
+        storageDriver = "devicemapper";
+      };
+
+    };
 
   environment.interactiveShellInit = ''
     export PATH="$PATH:$HOME/bin"
@@ -86,7 +88,9 @@
 
   users.users.root.openssh.authorizedKeys.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEk4qMbKX7KUZx4Yaiw4WCPlHP8nXYSZdynq6HwXeXWX Greg Burd <greg@burd.me> - 2018-11-11"];
 
-  users.users.gburd.openssh.authorizedKeys.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEk4qMbKX7KUZx4Yaiw4WCPlHP8nXYSZdynq6HwXeXWX Greg Burd <greg@burd.me> - 2018-11-11" "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDHJSkptaTw+tFV8cfeqxCRVlnNb8uXvBHmvgpXPmiNhnfZYEJY6mRqH9leAQCORg+yRD0R0ZjWwP1heeOK/ku1Jz2iaiDNxSSd54lg9T+d7AzBkmnIvuA3tIx0mRymWdFBvpznWgwdEdjguiN8nFC/VO7Jy9ddHUj/MoyEUQA+wxdhKddZqPNd8Fdph0K2QDjZ1Cns2/kLYFZhjMY22/ZvRYQYWibqVC5jISVOlo+JEqi/MBH272WHRccwKMoAC1M4xJElEHyxlxu/5USYTx/qg65YrfUNmM6f4F3c9fP74jRYqHXjfRK/Tk5qcMw2a0WFEVZwyyRfULgYwLw8dzIvmkabARtxs3ZnO1+EtdzRI4RH4255QtWx6kMnnnLH3TWXxcGesOEVKVnrISUTBOJD1jaj4FtygrcHq/0ZlicWbp6IRSYbHW0Pr4M3BjQxGXEzB6ekGV29hTF8fXhTWE2jpUSNgwx8j+4PdUgs0k8NSwvAf5mUZejem45bm1QiuI9l6616ml6d7VNAyKX2Q83tCDM5lC2dSkA23w4WdiFrj8Z3JaNHpXN+5jkFjo6Az3deow/m3EGp7I4XbLX6mm115CvtpnE57VDMqxgAMG6XqwhMYZnnlB4CADrR+2T5ohYUJqSjpy3iWp2E2e8afr+eUoRYKDDRnzvXAr/PF30Lgw== greg@blockfi.com"];
+  users.users.gburd.openssh.authorizedKeys.keys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEk4qMbKX7KUZx4Yaiw4WCPlHP8nXYSZdynq6HwXeXWX Greg Burd <greg@burd.me> - 2018-11-11"
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDHJSkptaTw+tFV8cfeqxCRVlnNb8uXvBHmvgpXPmiNhnfZYEJY6mRqH9leAQCORg+yRD0R0ZjWwP1heeOK/ku1Jz2iaiDNxSSd54lg9T+d7AzBkmnIvuA3tIx0mRymWdFBvpznWgwdEdjguiN8nFC/VO7Jy9ddHUj/MoyEUQA+wxdhKddZqPNd8Fdph0K2QDjZ1Cns2/kLYFZhjMY22/ZvRYQYWibqVC5jISVOlo+JEqi/MBH272WHRccwKMoAC1M4xJElEHyxlxu/5USYTx/qg65YrfUNmM6f4F3c9fP74jRYqHXjfRK/Tk5qcMw2a0WFEVZwyyRfULgYwLw8dzIvmkabARtxs3ZnO1+EtdzRI4RH4255QtWx6kMnnnLH3TWXxcGesOEVKVnrISUTBOJD1jaj4FtygrcHq/0ZlicWbp6IRSYbHW0Pr4M3BjQxGXEzB6ekGV29hTF8fXhTWE2jpUSNgwx8j+4PdUgs0k8NSwvAf5mUZejem45bm1QiuI9l6616ml6d7VNAyKX2Q83tCDM5lC2dSkA23w4WdiFrj8Z3JaNHpXN+5jkFjo6Az3deow/m3EGp7I4XbLX6mm115CvtpnE57VDMqxgAMG6XqwhMYZnnlB4CADrR+2T5ohYUJqSjpy3iWp2E2e8afr+eUoRYKDDRnzvXAr/PF30Lgw== greg@blockfi.com"];
 
   # Install some packages
   environment.systemPackages =

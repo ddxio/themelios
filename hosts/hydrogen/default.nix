@@ -2,7 +2,7 @@
 let
   hostname = "hydrogen";
   kubeMasterIP = "192.168.86.201";
-  kubeMasterHostname = "api.kube";
+  kubeMasterHostname = hostname;
   kubeMasterAPIServerPort = 443;
 in {
   imports = [
