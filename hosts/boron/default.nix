@@ -1,6 +1,6 @@
 { ... }:
 let
-  domain=".local";
+  domain="local";
 
 in {
   imports = [
