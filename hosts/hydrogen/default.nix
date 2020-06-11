@@ -1,5 +1,6 @@
 { ... }:
 let
+  hostname = "hydrogen";
   kubeMasterIP = "192.168.86.201";
   kubeMasterHostname = "api.kube";
   kubeMasterAPIServerPort = 443;
@@ -8,9 +9,9 @@ in {
     ../_common/default.nix
   ];
 
-  networking.hostName = "hydrogen";
+  networking.hostName = hostname;
   networking.extraHosts = ''
-    127.0.0.1 ${hostName}
+    127.0.0.1 ${hostname}
      ${kubeMasterIP} ${kubeMasterHostname}
     '';
 
