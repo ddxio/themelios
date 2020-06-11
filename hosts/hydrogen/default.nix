@@ -8,19 +8,27 @@ in
   imports = [
     ../_common/default.nix
   ];
+  #  environment.variables.NIXOS_CONFIG = "/nix-config/hosts/hydrogen/default.nix";
 
   networking.hostName = "hydrogen";
-  networking.extraHosts = "${kubeMasterIP} ${kubeMasterHostname}";
-  #  environment.variables.NIXOS_CONFIG = "/nix-config/hosts/hydrogen/default.nix";
+  networking.extraHosts = ''
+     127.0.0.1 ${networking.hostName}
+     ${kubeMasterIP} ${kubeMasterHostname}
+  '';
+
   services.kubernetes = {
-    roles = [ "master" "node" ];
+    roles = [ "master" ];
     easyCerts = true;
     masterAddress = kubeMasterHostname;
     apiserver = {
       securePort = kubeMasterAPIServerPort;
       advertiseAddress = kubeMasterIP;
     };
+
+    # use coredns
     addons.dns.enable = true;
+
+    # needed if you use swap
     kubelet.extraOpts = "--fail-swap-on=false";
   };
 }

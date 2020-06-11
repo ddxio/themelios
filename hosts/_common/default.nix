@@ -92,13 +92,18 @@
   environment.systemPackages =
     with pkgs;
     [
-      curl
+      bc
       bind
-      tig
+      coreutils
+      curl
+      file
       firecracker
       git
+#      gitAndTools.gitFull
+      gnupg
       gptfdisk
       helm
+      htop
       htop
       iotop
       kompose
@@ -106,15 +111,27 @@
       kubectl
       kubectx
       kubetail
+      lsof
+      mosh
       ncdu
       nix-review
+      psmisc # pstree, killall et al
+      pwgen
       python37Packages.glances
       qemu
       qemu_kvm
+      quilt
       silver-searcher
+      tig
       tmux
+      tree
+      unzip
+      utillinux
       vim
+      w3m
       wget
+      which
+      zip
     ];
 
   services.openssh =
