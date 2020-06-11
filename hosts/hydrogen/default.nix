@@ -3,7 +3,7 @@ let
   hostname = "hydrogen";
   domain = "local";
   kubeMasterIP = "192.168.86.201";
-  kubeMasterHostname = api.k8s.${domain};
+  kubeMasterHostname = "api.k8s.${domain}";
   kubeMasterAPIServerPort = 443;
 in {
   imports = [
