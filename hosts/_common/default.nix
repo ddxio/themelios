@@ -89,7 +89,8 @@
     with pkgs;
     [
       curl
-      dig
+      bind
+      tig
       firecracker
       git
       gptfdisk
