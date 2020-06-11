@@ -82,7 +82,11 @@
 
   users.users.root.openssh.authorizedKeys.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEk4qMbKX7KUZx4Yaiw4WCPlHP8nXYSZdynq6HwXeXWX Greg Burd <greg@burd.me> - 2018-11-11"];
 
-  users.users.gburd.openssh.authorizedKeys.keys = ["ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDJc2qb1909/uctbx0H2tX8BUOyyXQdxbvsQxDE80PIglc1hqxdf9yUQKCJyywSRyr5TL2KuYJD6UMer58neIlYUhnJ2laPQyb6+kYiQj0/xENpIn6JeLd8yQM48XTyBUW74IwtScPFww80FMSU8tlGcEng7TOdj3O1fLxNPfZZ7yt9+QrRVsmZQ/DxDhMNbnN+fVWV73czQCTzGkbqZ1j4fgE8cLdYgvDEqjgBildK7EsPuLHbSZ/oY0I5xCiiMvRH3tzJ8LMx2maYNXA8HJ9aXORSw3ZcwLgz9YmnRRQYc0ak4b6Uv+Qrw9aZVP7FksuNNdjjG6Moj/nF8fDvzR7vsEIDgj+x09XKYMYquqXbAHMyMrWwvkjUbnL2HwEgbATGkBDrif/7OIoqBzKBCFnI4T7nhDdMbAKmvuU+YUFWbIjYKrMHiGiBoG1LAJ1flN3B0cPefkklse9bp/raUvoftpuZ4EIFxkXnOgNawBh7yNjbMvfLzDxuXrz6lWqFZCnS4IslbL20g6Ur7KjDZcbFC1br7eoUUfBDkVN/oXW+nkWr97nogz1qtqfvyzKt3pNfLd+6TPyU8FLjyVJHzob+aAg0FXmBxQ5kuvAmmmi5gne6p7W+hx69OELLkjJ1Fauqxz1o5I0vxfhqarNrbGoli0OQLclVW9C+2T8kqZfAZQ== gburd@onshape.com" "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEk4qMbKX7KUZx4Yaiw4WCPlHP8nXYSZdynq6HwXeXWX Greg Burd <greg@burd.me> - 2018-11-11"];
+  users.users.gburd.openssh.authorizedKeys.keys = [
+  "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDJc2qb1909/uctbx0H2tX8BUOyyXQdxbvsQxDE80PIglc1hqxdf9yUQKCJyywSRyr5TL2KuYJD6UMer58neIlYUhnJ2laPQyb6+kYiQj0/xENpIn6JeLd8yQM48XTyBUW74IwtScPFww80FMSU8tlGcEng7TOdj3O1fLxNPfZZ7yt9+QrRVsmZQ/DxDhMNbnN+fVWV73czQCTzGkbqZ1j4fgE8cLdYgvDEqjgBildK7EsPuLHbSZ/oY0I5xCiiMvRH3tzJ8LMx2maYNXA8HJ9aXORSw3ZcwLgz9YmnRRQYc0ak4b6Uv+Qrw9aZVP7FksuNNdjjG6Moj/nF8fDvzR7vsEIDgj+x09XKYMYquqXbAHMyMrWwvkjUbnL2HwEgbATGkBDrif/7OIoqBzKBCFnI4T7nhDdMbAKmvuU+YUFWbIjYKrMHiGiBoG1LAJ1flN3B0cPefkklse9bp/raUvoftpuZ4EIFxkXnOgNawBh7yNjbMvfLzDxuXrz6lWqFZCnS4IslbL20g6Ur7KjDZcbFC1br7eoUUfBDkVN/oXW+nkWr97nogz1qtqfvyzKt3pNfLd+6TPyU8FLjyVJHzob+aAg0FXmBxQ5kuvAmmmi5gne6p7W+hx69OELLkjJ1Fauqxz1o5I0vxfhqarNrbGoli0OQLclVW9C+2T8kqZfAZQ== gburd@onshape.com"
+  "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEk4qMbKX7KUZx4Yaiw4WCPlHP8nXYSZdynq6HwXeXWX Greg Burd <greg@burd.me> - 2018-11-11"
+  "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDHJSkptaTw+tFV8cfeqxCRVlnNb8uXvBHmvgpXPmiNhnfZYEJY6mRqH9leAQCORg+yRD0R0ZjWwP1heeOK/ku1Jz2iaiDNxSSd54lg9T+d7AzBkmnIvuA3tIx0mRymWdFBvpznWgwdEdjguiN8nFC/VO7Jy9ddHUj/MoyEUQA+wxdhKddZqPNd8Fdph0K2QDjZ1Cns2/kLYFZhjMY22/ZvRYQYWibqVC5jISVOlo+JEqi/MBH272WHRccwKMoAC1M4xJElEHyxlxu/5USYTx/qg65YrfUNmM6f4F3c9fP74jRYqHXjfRK/Tk5qcMw2a0WFEVZwyyRfULgYwLw8dzIvmkabARtxs3ZnO1+EtdzRI4RH4255QtWx6kMnnnLH3TWXxcGesOEVKVnrISUTBOJD1jaj4FtygrcHq/0ZlicWbp6IRSYbHW0Pr4M3BjQxGXEzB6ekGV29hTF8fXhTWE2jpUSNgwx8j+4PdUgs0k8NSwvAf5mUZejem45bm1QiuI9l6616ml6d7VNAyKX2Q83tCDM5lC2dSkA23w4WdiFrj8Z3JaNHpXN+5jkFjo6Az3deow/m3EGp7I4XbLX6mm115CvtpnE57VDMqxgAMG6XqwhMYZnnlB4CADrR+2T5ohYUJqSjpy3iWp2E2e8afr+eUoRYKDDRnzvXAr/PF30Lgw== greg@blockfi.com"
+  ];
 
   # Install some packages
   environment.systemPackages =
@@ -103,6 +107,7 @@
       ncdu
       nix-review
       python37Packages.glances
+      tig
       qemu
       qemu_kvm
       silver-searcher
