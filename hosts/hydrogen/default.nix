@@ -1,7 +1,7 @@
 { ... }:
 
 let
-  domain="ddx.io";
+  domain=".local";
 
 in {
 
