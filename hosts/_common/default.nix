@@ -136,7 +136,7 @@
       ncat
       ngrep
       nix-review
-      osquery
+#      osquery
       psmisc # pstree, killall et al
       pwgen
       python37Packages.glances
@@ -163,7 +163,6 @@
   programs.tmux.clock24 = true;
   programs.mosh.enable = true;
 
-  services.osquery.enable = true;
   services.logrotate.enable = true;
   services.openssh =
     {
