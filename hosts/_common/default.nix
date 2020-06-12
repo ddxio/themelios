@@ -17,6 +17,18 @@
       defaultLocale = "en_US.UTF-8";
     };
 
+  security.sudo = {
+    enable = true;
+    wheelNeedsPassword = false;
+  };
+
+  services.ntp.enable = true;
+  networking.timeServers = [
+    "0.us.pool.ntp.org"
+    "1.us.pool.ntp.org"
+    "2.us.pool.ntp.org"
+    "3.us.pool.ntp.org"
+  ];
   time.timeZone = "America/New_York";
 
   programs.mtr.enable = true;
@@ -96,10 +108,12 @@
   environment.systemPackages =
     with pkgs;
     [
+#      awscli
       bc
       bind
       coreutils
       curl
+      dnsutils
       file
       firecracker
       gitAndTools.gitFull
@@ -108,16 +122,21 @@
       helm
       htop
       htop
+      inetutils
       iotop
       kompose
       kubecfg
       kubectl
       kubectx
       kubetail
+      kubernetes-helm
       lsof
       mosh
       ncdu
+      ncat
+      ngrep
       nix-review
+      osquery
       psmisc # pstree, killall et al
       pwgen
       python37Packages.glances
@@ -125,6 +144,7 @@
       qemu_kvm
       quilt
       silver-searcher
+      tcpdump
       tig
       tmux
       tree
@@ -137,6 +157,14 @@
       zip
     ];
 
+  networking.firewall.logRefusedConnections = false;
+
+  programs.tmux.enable = true;
+  programs.tmux.clock24 = true;
+  programs.mosh.enable = true;
+
+  services.osquery.enable = true;
+  services.logrotate.enable = true;
   services.openssh =
     {
       enable = true;
